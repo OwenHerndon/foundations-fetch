@@ -3,6 +3,10 @@
     
     $scope.methods = ["Get", "Post", "Options", "Head"];
 
+    $scope.methods = {
+      
+    }
+
     $scope.responses = [];
     $scope.url = "http://httpstat.us/200";
 

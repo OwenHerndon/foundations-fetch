@@ -12,14 +12,42 @@
   </head>
 
   <body ng-controller="MainController">
-    <input type="text" ng-model="url">
-    <select ng-model="selectedMethod" ng-options="method for method in methods"></select>
-    <button ng-click="fetch(url, selectedMethod)">Click Me!</button>
-    <ul ng-repeat="response in responses">
-        <li>{{ urlFetched }} </li>
-        <li>{{ selectedMethodFetched }}</li>
-        <li>{{ response.statusCode }}</li>
-    </ul>
+
+  <div class="ten columns offset-by-four">
+    <h2>Foundations of Fetch</h2>
+  </div>
+  
+  <hr/>
+
+  <div class="row">
+      <label class="four columns offset-by-two">Type a URL</label>
+      <label class="four columns">Select HTTP Method</label>
+  </div>
+
+
+    <div class="row">       
+        <!--Type URL -->
+        <input type="text" class="four columns offset-by-two" ng-model="url">
+
+        <select class="four columns" ng-model="selectedMethod" ng-options="method for method in methods"></select>
+    </div>
+
+    <div class="row">
+        <button class="two columns offset-by-five button-primary" ng-click="fetch(url, selectedMethod)">Click Me!</button>
+    </div>
+
+    <hr/>
+        <div class="ten columns offset-by-five">
+          <h4>Output</h4>
+        </div>
+        <ul class="even columns offset-by-one" ng-repeat="response in responses">
+            <li ng-model="fetch.url">{{ urlFetched }} </li>
+            <li>{{ selectedMethodFetched }}</li>
+            <li>{{ response.statusCode }}</li>
+        </ul>
+        
+    <hr/>
+    </div>
   </body>
   
 </html>
