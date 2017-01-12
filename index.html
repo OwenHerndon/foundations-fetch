@@ -13,11 +13,12 @@
 
   <body ng-controller="MainController">
     <input type="text" ng-model="url">
-    <button ng-click="fetch()">Click Me!</button>
-    <ul>
-      <li ng-repeat="response in responses">
-        {{ response.statusCode }}
-      </li>
+    <select ng-model="selectedMethod" ng-options="method for method in methods"></select>
+    <button ng-click="fetch(url, selectedMethod)">Click Me!</button>
+    <ul ng-repeat="response in responses">
+        <li>{{ urlFetched }} </li>
+        <li>{{ selectedMethodFetched }}</li>
+        <li>{{ response.statusCode }}</li>
     </ul>
   </body>
   
