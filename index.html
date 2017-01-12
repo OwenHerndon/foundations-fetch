@@ -29,7 +29,12 @@
         <!--Type URL -->
         <input type="text" class="four columns offset-by-two" ng-model="url">
 
-        <select class="four columns" ng-model="selectedMethod" ng-options="method for method in methods"></select>
+        <!-- <select class="four columns" ng-model="selectedMethod" ng-options="method for method in methods"></select> -->
+
+        <select class="four columns" ng-model="selectedMethod"> 
+          <option ng-repeat="(key,value) in methods" value="{{key}}">{{value}}</option>
+        </select>
+
     </div>
 
     <div class="row">

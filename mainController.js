@@ -1,11 +1,14 @@
 ;(function () {
   angular.module('fetchApp').controller('MainController', function ($scope, requestService, Response) {
     
-    $scope.methods = ["Get", "Post", "Options", "Head"];
+    // $scope.methods = ["Get", "Post", "Options", "Head"];
 
     $scope.methods = {
-      
-    }
+      get:"Get",
+      post:"Post",
+      options:"Options",
+      head:"Head"
+    };
 
     $scope.responses = [];
     $scope.url = "http://httpstat.us/200";
