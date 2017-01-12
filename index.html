@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<!-- <html ng-app="fetchApp"> -->
+<head>
+	<title></title>
+	<!-- <link rel="stylesheet" type="text/css" href="styles/main.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<!-- <body ng-controller="home"> -->
+<body ng-app="myApp">
+	<div ng-controller="home">
+		<form>
+
+			<input type="url" name="input" ng-model="url">
+
+			<select ng-model="selectedMethod" ng-options="method for method in methods"></select>
+
+			<button type="submit" value="Fetch" ng-click="fetch({url})">Click Me!</button>
+			<!-- <input type="submit" value="Fetch"> -->
+
+			<div>
+				<ul>
+				  <li>Url entered : {{url}}</li>
+				  <li>Method choosen : {{selectedMethod}}</li>
+				  <li>Response time: {{responseTimeMs}} or {{endTime}}</li>
+				  <li>Size of the response {{responseSize}}</li>
+				  <li>Status {{status}}</li>
+				  <li>Data {{data}}</li>
+				</ul>
+
+				<!-- <ul>
+					<li ng-repeat="response in responses">
+						ng-list {{response.statusCode}}
+					</li>
+				</ul> -->
+			</div>
+		</form>
+	</div>
+
+<!-- <script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script>
+ -->
+<script src="/javascripts/app.js"></script>
+
+<!-- <script src="/javascripts/Factories/mainFactory.js"></script> -->
+
+<script src="/javascripts/controllers/main.js"></script>
+
+</body>
+</html>
